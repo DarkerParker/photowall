@@ -31,10 +31,7 @@ html {
     font-weight: normal;
     font-style: normal;
    }
-   body {
-    background: offwhite;
-   }
-   .photoGrid {
+   .photo-grid {
     display: flex;
     flex-wrap: wrap;
     max-width: 1000px;
@@ -118,7 +115,7 @@ html {
     justify-content: center;
    }
    button, .button {
-    border: 2px solid #f2f2f2;
+    border: 2px solid gray;
     background: none;
     flex-basis: 48%;
     display: inline-block;
@@ -130,6 +127,7 @@ html {
     color: red;
     transition: all 0.2s;
     box-sizing: padding-box;
+    background-color: white;
     
    }
    button:hover,.button:hover, button:focus, .button:focus {
@@ -195,25 +193,25 @@ html {
     justify-content: center;
     font-size: 28pt;
    }
-.post{
+/* .post{
     max-width:500px;
-    /*max-height:500px;*/
     overflow:hidden;
     margin: 20px auto;
     padding:50px;
     background-color: aquamarine;
     border: black 1px solid;
-}
-.postcontainer{
+} */
+/* .photo-grid{
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
+} */
+/* 
 img{
     max-width: 500px;
 }
 
 .postdescription{
     text-align: center;
-}
+} */

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Title from './Title'
-import Photos from './Photos'
+import PhotoWall from './PhotoWall'
 
 const posts = [{
     id: "0",
@@ -22,8 +22,8 @@ const posts = [{
 class Main extends Component{
     render(){
         return (<div>
-                    <Title title = {"Photowall"}/>
-                    <Photos posts = {posts}/>
+                    <Title title = {'Photowall'}/>
+                    <PhotoWall posts = {posts}/>
                 </div>)
     }
 }
