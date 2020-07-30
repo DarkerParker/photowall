@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import Title from './Title'
 import PhotoWall from './PhotoWall'
 import AddPhoto from './AddPhoto'
-import {Route, Router} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 
 // const posts = [{
 //     id: "0",
@@ -24,20 +24,21 @@ class Main extends Component{
         super();
         this.state = {
             posts: [{
-                id: "0",
+                id: 0,
                 description: "beautiful landscape",
                 imageLink: "https://i1.sndcdn.com/artworks-000233950889-o4qwrx-t500x500.jpg"
                 }, {
-                id: "1",
+                id: 1,
                 description: "Aliens???",
                 imageLink: "https://i1.sndcdn.com/artworks-y8PtAmwRG5GxWZTq-utgsiA-t500x500.jpg"
                 }, {
-                id: "2",
+                id: 2,
                 description: "On a vacation!",
                 imageLink: "https://i1.sndcdn.com/artworks-hsj0ylvz2BQEo78P-ui2Uzw-t500x500.jpg"
             }],
         }
         this.removePhoto = this.removePhoto.bind(this);
+        this.addPhoto = this.addPhoto.bind(this);
     }
 
     removePhoto(postRemoved){
@@ -45,8 +46,8 @@ class Main extends Component{
         this.setState((state) => ({posts: state.posts.filter((post) => post !== postRemoved)}))
     }
 
-    navigate(){
-        this.setState({screen:'addPhoto'})
+    addPhoto(post){
+        this.setState((state) => state.posts.push(post))
     }
 
     componentDidMount(){
@@ -65,7 +66,12 @@ class Main extends Component{
 
                     )}/>           
                     
-                    <Route path="/AddPhoto" component={AddPhoto}/>
+                    <Route path="/AddPhoto" render={({history}) => 
+                        <AddPhoto onAddPhoto={(addedPost) => {
+                            this.addPhoto(addedPost)
+                            history.push("/")}
+                        }/>
+                    }/>
 
                 </div>)
     }
