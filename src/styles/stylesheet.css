@@ -63,7 +63,6 @@ html {
     max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    background: #fff;
     border: black;
    }
    .single-photo .figure {
